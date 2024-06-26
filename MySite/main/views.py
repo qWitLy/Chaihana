@@ -21,6 +21,7 @@ def Main (request):
 
 def GetTables(request):
     tables = Table.objects.all().values_list("number")
+    
     responseT = JsonResponse(list(tables),safe=False)
     return responseT
 
@@ -125,3 +126,9 @@ def get_orders(request):
             })
 
         return JsonResponse({'orders': order_list})
+    
+def Kitchen(request):
+    if not auth:
+        return HttpResponseRedirect("/login")
+    else:
+        return render(request, 'main/kitchen.html')

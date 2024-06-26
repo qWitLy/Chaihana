@@ -12,5 +12,6 @@ urlpatterns = [
     path('registr',views.Reg),
     path('tables',views.GetTables),
     path('logout',views.Logout),
-    path('add',views.AddTables)
+    path('add',views.AddTables),
+    path('kitchen', views.Kitchen)
 ]
